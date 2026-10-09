@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayush | Creative Studio</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #080808;
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #111;
+  border-bottom: 1px solid #292929;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #a855f7;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  margin-left: 12px;
+  font-size: 13px;
+}
+
+.hero {
+  text-align: center;
+  padding: 75px 20px;
+  background: radial-gradient(circle at top, #31104e, #080808 70%);
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.hero h1 span {
+  color: #c084fc;
+}
+
+.hero p {
+  color: #ccc;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: inline-block;
+  background: #a855f7;
+  color: white;
+  padding: 13px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  margin: 5px;
+}
+
+.btn:hover {
+  background: #9333ea;
+}
+
+section {
+  padding: 45px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  font-size: 29px;
+  margin-bottom: 28px;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background: #151515;
+  border: 1px solid #303030;
+  border-radius: 13px;
+  padding: 25px 12px;
+  text-align: center;
+}
+
+.card .icon {
+  font-size: 35px;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 13px;
+  color: #bbb;
+  line-height: 1.6;
+}
+
+.card button {
+  margin-top: 15px;
+}
+
+.upload-box {
+  background: #151515;
+  border: 2px dashed #a855f7;
+  padding: 25px 15px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+input[type="file"] {
+  display: block;
+  width: 100%;
+  margin: 20px 0;
+  color: white;
+}
+
+video {
+  width: 100%;
+  max-height: 450px;
+  margin-top: 20px;
+  border-radius: 12px;
+  display: none;
+  background: black;
+}
+
+#previewMessage {
+  color: #bbb;
+  margin-top: 12px;
+  font-size: 13px;
+}
+
+.contact {
+  text-align: center;
+  background: #151515;
+  border-radius: 15px;
+  padding: 30px 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #111;
+  color: #999;
+  font-size: 13px;
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  header {
+    padding: 16px 12px;
+  }
+
+  .menu a {
+    margin-left: 7px;
+    font-size: 12px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">AYUSH.STUDIO</div>
+  <nav class="menu">
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>Make Your Ideas<br>
+    <span>Look Creative.</span>
+  </h1>
+
+  <p>
+    Welcome to my creative studio!<br>
+    Posters, logos and typography reels<br>
+    designed with creativity.
+  </p>
+
+  <a class="btn"
+     href="https://www.instagram.com/official_ayush_typo/"
+     target="_blank" rel="noopener">
+     📸 Visit My Instagram
+  </a>
+
+  <a class="btn" href="#services">Explore Services</a>
+</div>
+
+<section id="services">
+  <h2>🎨 My Services</h2>
+
+  <div class="services">
+
+    <div class="card">
+      <div class="icon">🖼️</div>
+      <h3>Poster Design</h3>
+      <p>Creative posters for social media and special occasions.</p>
+      <button class="btn" onclick="order('Poster Design')">
+        Order Now
+      </button>
+    </div>
+
+    <div class="card">
+      <div class="icon">✨</div>
+      <h3>Logo Design</h3>
+      <p>Unique logo concepts for creators and brands.</p>
+      <button class="btn" onclick="order('Logo Design')">
+        Order Now
+      </button>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎬</div>
+      <h3>Typography Reels</h3>
+      <p>Stylish text animations and creative video edits.</p>
+      <button class="btn" onclick="order('Typography Reel')">
+        Order Now
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<section id="portfolio">
+  <h2>🎥 My Video Portfolio</h2>
+
+  <div class="upload-box">
+    <h3>Upload Your Video</h3>
+    <p style="color:#bbb;margin-top:10px">
+      Select a video from your mobile gallery to preview it.
+    </p>
+
+    <input
+      type="file"
+      id="videoFile"
+      accept="video/*"
+    >
+
+    <video id="videoPreview" controls playsinline></video>
+
+    <p id="previewMessage">
+      Your selected video preview will appear here.
+    </p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact">
+    <h2>📩 Let's Work Together</h2>
+
+    <p style="color:#ccc;line-height:1.8">
+      Want a poster, logo or typography reel?<br>
+      Contact me on Instagram to discuss your project.
+    </p>
+
+    <a class="btn"
+       href="https://www.instagram.com/official_ayush_typo/"
+       target="_blank" rel="noopener">
+       Message Me on Instagram
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Ayush Studio | Made with ❤️ and Creativity</p>
+</footer>
+
+<script>
+const videoInput = document.getElementById("videoFile");
+const videoPreview = document.getElementById("videoPreview");
+const previewMessage = document.getElementById("previewMessage");
+
+let currentVideoURL = null;
+
+videoInput.addEventListener("change", function () {
+  const file = this.files[0];
+
+  if (!file) return;
+
+  if (!file.type.startsWith("video/")) {
+    alert("Please select a video file.");
+    return;
+  }
+
+  if (currentVideoURL) {
+    URL.revokeObjectURL(currentVideoURL);
+  }
+
+  currentVideoURL = URL.createObjectURL(file);
+
+  videoPreview.src = currentVideoURL;
+  videoPreview.style.display = "block";
+  previewMessage.textContent = "Video selected: " + file.name;
+});
+
+function order(service) {
+  const username = "official_ayush_typo";
+
+  const message = "Hi Ayush! I want to order " + service + ".";
+
+  const url =
+    "https://www.instagram.com/" + username + "/";
+
+  alert(
+    "Your selected service: " + service +
+    "\nOpening Instagram. Send Ayush a message to discuss your order!"
+  );
+
+  window.open(url, "_blank", "noopener");
+}
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AYUSH.STUDIO | Creative Portfolio</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #080810;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  padding: 18px;
+  background: #11111d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  color: #c084fc;
+  font-weight: bold;
+  font-size: 21px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  margin-left: 10px;
+}
+
+.hero {
+  text-align: center;
+  padding: 75px 18px;
+  background: radial-gradient(circle at top, #492078, #080810 70%);
+}
+
+.hero h1 {
+  font-size: 43px;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.purple {
+  color: #c084fc;
+}
+
+.hero p {
+  color: #d0ced8;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 18px;
+  border: none;
+  border-radius: 9px;
+  background: #9333ea;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.btn:hover {
+  background: #a855f7;
+}
+
+section {
+  max-width: 1000px;
+  padding: 48px 18px;
+  margin: auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 29px;
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #aaa;
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background: #151522;
+  padding: 22px 12px;
+  border: 1px solid #29293c;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.icon {
+  font-size: 36px;
+  margin-bottom: 13px;
+}
+
+.card h3 {
+  margin-bottom: 12px;
+}
+
+.price {
+  color: #c084fc;
+  font-size: 25px;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.card p {
+  color: #b9b9c7;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.gallery-item {
+  background: #151522;
+  border: 1px solid #303047;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.gallery-item img,
+.gallery-item video {
+  display: block;
+  width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  background: #0b0b12;
+}
+
+.gallery-item p {
+  padding: 12px 5px;
+  font-size: 13px;
+}
+
+.upload-box {
+  background: #151522;
+  border: 2px dashed #9333ea;
+  border-radius: 15px;
+  padding: 25px 15px;
+  text-align: center;
+}
+
+.upload-box p {
+  color: #bbb;
+  line-height: 1.7;
+  margin: 10px 0;
+}
+
+input[type="file"] {
+  display: block;
+  width: 100%;
+  margin: 18px 0;
+  color: white;
+}
+
+.upload-box video {
+  width: 100%;
+  max-height: 400px;
+  display: none;
+  margin-top: 15px;
+  border-radius: 10px;
+}
+
+.contact {
+  text-align: center;
+  padding: 30px 15px;
+  background: #151522;
+  border-radius: 15px;
+}
+
+.contact p {
+  color: #bbb;
+  line-height: 1.8;
+  margin: 15px 0;
+}
+
+footer {
+  text-align: center;
+  padding: 25px 15px;
+  background: #11111d;
+  color: #aaa;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+@media(max-width: 400px) {
+  .hero h1 {
+    font-size: 35px;
+  }
+
+  .logo {
+    font-size: 17px;
+  }
+
+  nav a {
+    font-size: 11px;
+    margin-left: 5px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">AYUSH.STUDIO</div>
+
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>
+    YOUR IDEA.<br>
+    <span class="purple">MY CREATIVITY.</span>
+  </h1>
+
+  <p>
+    Welcome to my creative world! 🎨<br>
+    Poster Design • Logo Design • Typography Reels
+  </p>
+
+  <a class="btn"
+     href="https://www.instagram.com/official_ayush_typo/"
+     target="_blank" rel="noopener">
+    📸 Visit My Instagram
+  </a>
+
+  <a class="btn" href="#services">
+    Explore Services
+  </a>
+</div>
+
+<section id="services">
+  <h2 class="section-title">My Services</h2>
+  <p class="subtitle">Creative designs at affordable prices.</p>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="icon">🖼️</div>
+      <h3>Poster Design</h3>
+      <p>Creative posters for social media, birthdays and events.</p>
+      <div class="price">₹99</div>
+      <button class="btn" onclick="order('Poster Design',99)">
+        Order Now
+      </button>
+    </div>
+
+    <div class="card">
+      <div class="icon">✨</div>
+      <h3>Logo Design</h3>
+      <p>Unique logo concepts for creators and personal brands.</p>
+      <div class="price">₹199</div>
+      <button class="btn" onclick="order('Logo Design',199)">
+        Order Now
+      </button>
+    </div>
+
+    <div class="card">
+      <div class="icon">🎬</div>
+      <h3>Typography Reel</h3>
+      <p>Stylish text animations and creative video editing.</p>
+      <div class="price">₹199</div>
+      <button class="btn" onclick="order('Typography Reel',199)">
+        Order Now
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<section id="portfolio">
+  <h2 class="section-title">My Portfolio</h2>
+  <p class="subtitle">Showcase your creative work here.</p>
+
+  <div class="upload-box">
+    <h3>📸 Add Your Designs</h3>
+
+    <p>
+      Select poster or logo images from your mobile gallery.
+      They will appear in the gallery below.
+    </p>
+
+    <input type="file"
+           id="imageInput"
+           accept="image/*"
+           multiple>
+
+    <h3 style="margin-top:20px">🎥 Add Your Videos</h3>
+
+    <p>
+      Select video files from your gallery to preview them.
+    </p>
+
+    <input type="file"
+           id="videoInput"
+           accept="video/*"
+           multiple>
+  </div>
+
+  <div class="gallery" id="gallery"
+       style="margin-top:20px">
+  </div>
+
+  <p style="text-align:center;color:#999;font-size:12px;margin-top:15px">
+    Selected media is shown in this browser session.
+  </p>
+</section>
+
+<section id="upload">
+  <h2 class="section-title">Upload Your Video</h2>
+
+  <p class="subtitle">
+    Visitors can select videos to preview on this page.
+  </p>
+
+  <div class="upload-box">
+    <input type="file"
+           id="visitorVideo"
+           accept="video/*">
+
+    <video id="visitorPreview"
+           controls
+           playsinline></video>
+
+    <p id="videoStatus">
+      Choose a video from your device.
+    </p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact">
+    <h2>Let's Work Together! ❤️</h2>
+
+    <p>
+      Want a custom poster, logo or typography reel?<br>
+      Contact me on Instagram to discuss your order.
+    </p>
+
+    <a class="btn"
+       href="https://www.instagram.com/official_ayush_typo/"
+       target="_blank" rel="noopener">
+      Message Me on Instagram
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 AYUSH.STUDIO</p>
+  <p>Designed with creativity ❤️</p>
+</footer>
+
+<script>
+const gallery = document.getElementById("gallery");
+const objectURLs = [];
+
+function addMedia(file, isVideo) {
+  const url = URL.createObjectURL(file);
+  objectURLs.push(url);
+
+  const item = document.createElement("div");
+  item.className = "gallery-item";
+
+  let media;
+
+  if (isVideo) {
+    media = document.createElement("video");
+    media.controls = true;
+    media.playsInline = true;
+  } else {
+    media = document.createElement("img");
+    media.alt = file.name;
+  }
+
+  media.src = url;
+
+  const caption = document.createElement("p");
+  caption.textContent = file.name;
+
+  item.appendChild(media);
+  item.appendChild(caption);
+  gallery.prepend(item);
+}
+
+document.getElementById("imageInput")
+.addEventListener("change", function () {
+  Array.from(this.files).forEach(file => {
+    if (file.type.startsWith("image/")) {
+      addMedia(file, false);
+    }
+  });
+
+  this.value = "";
+});
+
+document.getElementById("videoInput")
+.addEventListener("change", function () {
+  Array.from(this.files).forEach(file => {
+    if (file.type.startsWith("video/")) {
+      addMedia(file, true);
+    }
+  });
+
+  this.value = "";
+});
+
+const visitorVideo = document.getElementById("visitorVideo");
+const visitorPreview = document.getElementById("visitorPreview");
+const videoStatus = document.getElementById("videoStatus");
+
+let visitorURL = null;
+
+visitorVideo.addEventListener("change", function () {
+  const file = this.files[0];
+
+  if (!file) return;
+
+  if (!file.type.startsWith("video/")) {
+    videoStatus.textContent = "Please choose a valid video.";
+    return;
+  }
+
+  if (visitorURL) {
+    URL.revokeObjectURL(visitorURL);
+  }
+
+  visitorURL = URL.createObjectURL(file);
+
+  visitorPreview.src = visitorURL;
+  visitorPreview.style.display = "block";
+
+  videoStatus.textContent =
+    "Previewing: " + file.name;
+});
+
+function order(service, price) {
+  const username = "official_ayush_typo";
+
+  const message =
+    "Hi Ayush! I want to order " +
+    service + " for ₹" + price + ".";
+
+  alert(
+    "Service: " + service +
+    "\nPrice: ₹" + price +
+    "\n\nInstagram will open. Send this order message:\n\n" +
+    message
+  );
+
+  window.open(
+    "https://www.instagram.com/" + username + "/",
+    "_blank",
+    "noopener"
+  );
+}
+
+window.addEventListener("beforeunload", function () {
+  objectURLs.forEach(url => URL.revokeObjectURL(url));
+
+  if (visitorURL) {
+    URL.revokeObjectURL(visitorURL);
+  }
+});
+</script>
+
+</body>
+</html>
